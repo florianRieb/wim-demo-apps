@@ -9,32 +9,19 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>app</artifactId>
+    <artifactId>service.proxy</artifactId>
 
-
-    <!--Um das Modul zu finden  -->
     <dependencies>
-        <dependency>
-            <groupId>com.riebdt</groupId>
-            <artifactId>customloghandler</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
         <dependency>
             <groupId>com.riebdt</groupId>
             <artifactId>service.api</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
-            <groupId>com.riebdt</groupId>
-            <artifactId>service.local</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <groupId>org.zeromq</groupId>
+            <artifactId>jeromq</artifactId>
+            <version>0.4.3</version>
         </dependency>
-        <dependency>
-            <groupId>com.riebdt</groupId>
-            <artifactId>service.proxy</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
-
     </dependencies>
 
 

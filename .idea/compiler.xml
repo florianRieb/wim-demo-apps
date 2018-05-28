@@ -10,6 +10,7 @@
         <module name="customloghandler" />
         <module name="service.api" />
         <module name="service.local" />
+        <module name="service.proxy" />
       </profile>
     </annotationProcessing>
   </component>

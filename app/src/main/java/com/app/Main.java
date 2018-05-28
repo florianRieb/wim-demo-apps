@@ -3,6 +3,7 @@ package com.app;
 import com.api.CalcService;
 import com.loghandler.CustomHandler;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -36,7 +37,11 @@ public class Main {
             throw new RuntimeException("No Service providers found");
         }
         for(CalcService service:services){
-            rootLogger.info("result: " +service.calc(numbers));
+            try {
+                rootLogger.info("result: " +service.calc(numbers));
+            } catch (IOException e) {
+                rootLogger.warning(e.getMessage());
+            }
         }
 
 

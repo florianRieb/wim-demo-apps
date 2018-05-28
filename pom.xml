@@ -17,6 +17,7 @@
         <module>customloghandler</module>
         <module>service.api</module>
         <module>service.local</module>
+        <module>service.proxy</module>
     </modules>
 
     <properties>

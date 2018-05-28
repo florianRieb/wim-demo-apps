@@ -1,4 +1,4 @@
-package com.service;
+package com.service.local;
 
 import com.api.CalcService;
 
