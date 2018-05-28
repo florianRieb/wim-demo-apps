@@ -3,5 +3,8 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/customloghandler" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/service.api" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/service.local" charset="UTF-8" />
   </component>
 </project>
