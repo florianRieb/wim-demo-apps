@@ -18,6 +18,7 @@
         <module>service.api</module>
         <module>service.local</module>
         <module>service.proxy</module>
+        <module>service.remoteImpl</module>
     </modules>
 
     <properties>

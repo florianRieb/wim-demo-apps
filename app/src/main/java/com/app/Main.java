@@ -13,7 +13,7 @@ import java.util.logging.Logger;
 
 public class Main {
 
-    public static void main(String... args){
+    public static void main(String... args) throws InterruptedException {
         LogManager.getLogManager().reset();
         Logger rootLogger = LogManager.getLogManager().getLogger("");
         rootLogger.addHandler(new CustomHandler());
@@ -36,13 +36,21 @@ public class Main {
         if(!services.iterator().hasNext()){
             throw new RuntimeException("No Service providers found");
         }
-        for(CalcService service:services){
-            try {
-                rootLogger.info("result: " +service.calc(numbers));
-            } catch (IOException e) {
-                rootLogger.warning(e.getMessage());
+
+        while (true){
+            for(CalcService service:services){
+                try {
+                    rootLogger.info("result: " +service.calc(numbers));
+                } catch (IOException e) {
+                    rootLogger.warning(e.getMessage());
+                }
+
             }
+            Thread.sleep(20000);
+
+
         }
+
 
 
 

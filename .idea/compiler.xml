@@ -11,6 +11,7 @@
         <module name="service.api" />
         <module name="service.local" />
         <module name="service.proxy" />
+        <module name="service.remoteImpl" />
       </profile>
     </annotationProcessing>
   </component>
