@@ -1,4 +1,5 @@
-FROM alpine:3.7
+FROM alpine:3.7 AS builder
+
 
 
 ENV JAVA_HOME=/opt/jdk \
@@ -17,4 +18,26 @@ WORKDIR /app
 
 COPY mlib mlib
 
-CMD java -p mlib -m app/com.app.Main 2.0 3.0
+
+RUN jlink --module-path mlib:$JAVA_HOME/jmods \
+        --add-modules app --add-modules service.local  \
+        --launcher run=app/com.app.Main \
+        --output dist \
+        --compress 2 \
+        --strip-debug \
+        --no-header-files \
+        --no-man-pages
+
+# Second stage: Copies the custom JRE into our image and runs it
+FROM alpine:3.7
+
+
+WORKDIR /app
+
+
+COPY --from=builder /app/dist/ ./
+COPY --from=builder /app/mlib/jeromq-0.4.3.jar  /app/mlib/service.proxy-1.0-SNAPSHOT.jar mlib/
+
+
+
+ENTRYPOINT ["bin/run"]
